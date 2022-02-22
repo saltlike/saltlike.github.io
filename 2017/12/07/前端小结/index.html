@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   
-  <title>about | saltlike</title>
+  <title>前端小结 | saltlike</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
     <meta name="description" content="saltlike, 博客">
@@ -87,44 +87,129 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-前端小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/about/index.html">about</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      前端小结
     </h1>
   
 
-,
+
       </header>
     
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2017-12-07T05:24:38.000Z" itemprop="datePublished">2017年12月07日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2017/12/07/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%BB%93/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
     <div class="e-content article-entry" itemprop="articleBody">
-      <div class="author-page">
-        <div class="photo"><img src=""></div>
-        <div class="author">
-          <div><i class="fa fa-user">name：</i>saltlike</div>
-          
-            <div>
-              <i class="fa fa-email">email：</i>
-              <a href="" target="_blank"></a>
+      
+        <h2 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h2><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>Promise处理异步代码的代码可读性比回调机制要好；问题是如果没有处理Promise的reject，会导致错误被丢进黑洞。</p>
+<h2 id="面试问题"><a href="#面试问题" class="headerlink" title="面试问题"></a>面试问题</h2><h3 id="跨域和前端解决"><a href="#跨域和前端解决" class="headerlink" title="跨域和前端解决"></a>跨域和前端解决</h3><p>跨域源于浏览器的同源策略限制，一级域名、二级域名、端口有一个不同，都属于跨域行为；<br>前端解决跨域方法不多：Chrome可借助CORS插件代理同域请求到跨域接口；<br>实际编码中可使用CORS(Cross-Origin-Resource-Sharin)和JSONP;<br>JSONP的原理是利用<code> &lt;script&gt;</code> 标签允许跨域资源请求的漏洞实现的，它使用<code>&lt;script&gt;</code>发送跨域请求，并使用一个callback参数将请求信息传递给服务器，服务器返回一个JS脚本包含我们指定的callback函数，然后我们执行callback即可获得服务器返回的内容；由于局限于<code>&lt;script&gt;</code>，所以JSONP只能发送GET请求；<br>还有document.domain 或window.name等一些解决方案；</p>
+<h3 id="web前端性能优化"><a href="#web前端性能优化" class="headerlink" title="web前端性能优化"></a>web前端性能优化</h3><p>一般说来，web前端指网站业务逻辑之前的部分，包括浏览器加载、网站视图模型、图片服务、CDN服务等，主要优化手段有浏览器访问，使用反向代理、CDN等；</p>
+<h4 id="浏览器访问优化"><a href="#浏览器访问优化" class="headerlink" title="浏览器访问优化"></a>浏览器访问优化</h4><h5 id="减少http请求，合理设置http缓存"><a href="#减少http请求，合理设置http缓存" class="headerlink" title="减少http请求，合理设置http缓存"></a>减少http请求，合理设置http缓存</h5><p>减少http的主要手段有合并CSS、合并JavaScript、合并图片<br>恰当的缓存可以大大减少http请求：很少变化的图片资源可以直接通过http header中的Expires设置一个很长的过期头；变化不频繁又可能会变得资源可以使用Last-Modifed来做请求验证</p>
+<h5 id="使用浏览器缓存"><a href="#使用浏览器缓存" class="headerlink" title="使用浏览器缓存"></a>使用浏览器缓存</h5><h5 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h5><p>合并CSS图片，减少请求数；</p>
+<h5 id="应用压缩"><a href="#应用压缩" class="headerlink" title="应用压缩"></a>应用压缩</h5><p>压缩HTML、CSS、JS文件</p>
+<h5 id="CSS放在页面最上部，JS放在页面最下面"><a href="#CSS放在页面最上部，JS放在页面最下面" class="headerlink" title="CSS放在页面最上部，JS放在页面最下面"></a>CSS放在页面最上部，JS放在页面最下面</h5><h5 id="JS代码优化"><a href="#JS代码优化" class="headerlink" title="JS代码优化"></a>JS代码优化</h5><p>1、DOM操作要考虑浏览器的Reflow和Repaint，这些需要消耗资源。<br>2、避免用with、eval、Function 消耗资源、效率低、速度慢；<br>3、减少作用域链查找，减少闭包使用；<br>4、使用字符串拼接</p>
+<h5 id="CSS选择符优化"><a href="#CSS选择符优化" class="headerlink" title="CSS选择符优化"></a>CSS选择符优化</h5><h5 id="异步请求Callback"><a href="#异步请求Callback" class="headerlink" title="异步请求Callback"></a>异步请求Callback</h5><h4 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h4><p>CDN缓存的一般是静态资源，如图片、文件、CSS、script脚本、静态网页等</p>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><p>同时可以实现负载均衡功能</p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-text">ES6新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise"><span class="toc-text">Promise</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98"><span class="toc-text">面试问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E5%92%8C%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%86%B3"><span class="toc-text">跨域和前端解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">web前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE%E4%BC%98%E5%8C%96"><span class="toc-text">浏览器访问优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%87%8F%E5%B0%91http%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%90%88%E7%90%86%E8%AE%BE%E7%BD%AEhttp%E7%BC%93%E5%AD%98"><span class="toc-text">减少http请求，合理设置http缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="toc-text">使用浏览器缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS-Sprites"><span class="toc-text">CSS Sprites</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%8E%8B%E7%BC%A9"><span class="toc-text">应用压缩</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS%E6%94%BE%E5%9C%A8%E9%A1%B5%E9%9D%A2%E6%9C%80%E4%B8%8A%E9%83%A8%EF%BC%8CJS%E6%94%BE%E5%9C%A8%E9%A1%B5%E9%9D%A2%E6%9C%80%E4%B8%8B%E9%9D%A2"><span class="toc-text">CSS放在页面最上部，JS放在页面最下面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JS%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96"><span class="toc-text">JS代码优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS%E9%80%89%E6%8B%A9%E7%AC%A6%E4%BC%98%E5%8C%96"><span class="toc-text">CSS选择符优化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82Callback"><span class="toc-text">异步请求Callback</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CDN%E5%8A%A0%E9%80%9F"><span class="toc-text">CDN加速</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text">反向代理</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
             </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://example.com/2017/12/07/前端小结/">http://example.com/2017/12/07/前端小结/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
           
-            <div>
-              <i class="fa fa-github">github：</i>
-              <a href="" target="_blank"></a>
-            </div>
+
           
-            <div>
-              <i class="fa fa-weibo">weibo：</i>
-              <a href="" target="_blank"></a>
-            </div>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
           
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
         </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2018/04/15/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          ES6新特性
+        
       </div>
+    </a>
+  
+  
+    <a href="/2017/12/03/%E6%B5%8B%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">测试</div>
+    </a>
+  
+</nav>
+
+      
       
         
 
@@ -135,7 +220,7 @@
 
 
       
-    </div>
+    </footer>
   </div>
 </article>
 </section>

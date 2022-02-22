@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   
-  <title>about | saltlike</title>
+  <title>es6迭代器 | saltlike</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
     <meta name="description" content="saltlike, 博客">
@@ -87,44 +87,126 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-es6迭代器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/about/index.html">about</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      es6迭代器
     </h1>
   
 
-,
+
       </header>
     
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2020-06-02T13:42:23.000Z" itemprop="datePublished">2020年06月02日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/categories/ES6/">ES6</a> > <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2020/06/02/es6%E8%BF%AD%E4%BB%A3%E5%99%A8/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
     <div class="e-content article-entry" itemprop="articleBody">
-      <div class="author-page">
-        <div class="photo"><img src=""></div>
-        <div class="author">
-          <div><i class="fa fa-user">name：</i>saltlike</div>
-          
-            <div>
-              <i class="fa fa-email">email：</i>
-              <a href="" target="_blank"></a>
+      
+        <h2 id="es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容"><a href="#es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容" class="headerlink" title="es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容"></a>es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容</h2><ol>
+<li>entries(): 返回一个包含键值对的迭代器；</li>
+<li>values(): 返回一个包含集合中的值得迭代器；</li>
+<li>keys(): 返回一个包含集合中的键的迭代器；</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">let colors = [&#x27;red&#x27;,&#x27;green&#x27;,&#x27;blue&#x27;]</span><br><span class="line">    let testObj = [</span><br><span class="line">      &#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;,</span><br><span class="line">      &#123;&#x27;id&#x27;:&#x27;id2&#x27;,&#x27;name&#x27;:&#x27;name2&#x27;&#125;,</span><br><span class="line">      &#123;&#x27;id&#x27;:&#x27;id3&#x27;,&#x27;name&#x27;:&#x27;name3&#x27;&#125;,</span><br><span class="line">    ]</span><br><span class="line">    let testObj1 = &#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;</span><br><span class="line">    for(let entry of colors.entries()) &#123;</span><br><span class="line">      console.log(entry) // [0,&quot;red&quot;],[1,&quot;green&quot;],[2,&quot;blue&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">    for(let entry of testObj.entries()) &#123;</span><br><span class="line">      console.log(entry)  // [0,&#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;],[1,&#123;&#x27;id&#x27;:&#x27;id2&#x27;,&#x27;name&#x27;:&#x27;name2&#x27;&#125;],[2,&#123;&#x27;id&#x27;:&#x27;id3&#x27;,&#x27;name&#x27;:&#x27;name3&#x27;&#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    for(let values of testObj.values()) &#123;</span><br><span class="line">      console.log(values)  // &#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;,&#123;&#x27;id&#x27;:&#x27;id2&#x27;,&#x27;name&#x27;:&#x27;name2&#x27;&#125;,&#123;&#x27;id&#x27;:&#x27;id3&#x27;,&#x27;name&#x27;:&#x27;name3&#x27;&#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    for(let keys of testObj.keys()) &#123;</span><br><span class="line">      console.log(keys)  // 0,1,2</span><br><span class="line">    &#125;  </span><br><span class="line">    for(let keys of Object.keys(testObj1)) &#123;</span><br><span class="line">      console.log(keys)  // id,name</span><br><span class="line">    &#125;</span><br><span class="line">    for(let entries of Object.entries(testObj1)) &#123;</span><br><span class="line">      console.log(entries)  // [&quot;id&quot;, &quot;id1&quot;],[&quot;name&quot;, &quot;name1&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">    for(let values of Object.values(testObj1)) &#123;</span><br><span class="line">      console.log(values)  // id1,name1</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#es6%E7%9A%84%E9%9B%86%E5%90%88%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8BMap%E3%80%81Set%E5%92%8C%E6%95%B0%E7%BB%84%EF%BC%8C%E6%9C%89%E5%A6%82%E4%B8%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%94%A8%E4%BA%8E%E6%90%9C%E7%B4%A2%E5%AE%83%E4%BB%AC%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容</span></a></li></ol>
+    </div>
+  </div>
+
+
             </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://example.com/2020/06/02/es6迭代器/">http://example.com/2020/06/02/es6迭代器/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
           
-            <div>
-              <i class="fa fa-github">github：</i>
-              <a href="" target="_blank"></a>
-            </div>
+
           
-            <div>
-              <i class="fa fa-weibo">weibo：</i>
-              <a href="" target="_blank"></a>
-            </div>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
           
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
         </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2020/06/21/Element-UI%E5%8A%A8%E6%80%81%E8%A1%A8%E6%A0%BC%E5%8A%9F%E8%83%BD/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          Element UI动态表格功能
+        
       </div>
+    </a>
+  
+  
+    <a href="/2020/05/21/map%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">map用法</div>
+    </a>
+  
+</nav>
+
+      
       
         
 
@@ -135,7 +217,7 @@
 
 
       
-    </div>
+    </footer>
   </div>
 </article>
 </section>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ES6新特性 | saltlike</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="saltlike, 博客">
+  
+  
+    <meta name="keywords" content="saltlike, 博客">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="saltlike" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">saltlike</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> 关于</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ES6新特性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ES6新特性
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2018-04-15T13:04:28.000Z" itemprop="datePublished">2018年04月15日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/categories/ES6/">ES6</a> > <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2018/04/15/ES6%E6%96%B0%E7%89%B9%E6%80%A7/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="字符串模板"><a href="#字符串模板" class="headerlink" title="字符串模板"></a>字符串模板</h1><p>ES6中我们可以使用反引号**&#96;**（Tab上方）来创建字符串，并且可以在字符串中以$(变量名)的形式插入一个变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num = Math.random()</span><br><span class="line">console.log(`your num is $(num)`)</span><br></pre></td></tr></table></figure>
+<h1 id="let和const关键字"><a href="#let和const关键字" class="headerlink" title="let和const关键字"></a>let和const关键字</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><h3 id="无变量提升"><a href="#无变量提升" class="headerlink" title="无变量提升"></a>无变量提升</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(num)    // =&gt; undefined</span><br><span class="line">var num = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(num)    // =&gt; ReferenceError</span><br><span class="line">let num = 1</span><br></pre></td></tr></table></figure>
+<p>使用var声明的变量会自动提升到当前作用域的顶部，如果声明位置与作用域顶部之间有另一个同名变量，很容易引起错误。使用let声明的变量不会进行变量提升，规避了这个隐患。</p>
+<blockquote>
+<ul>
+<li>var声明的变量提升后虽然在声明语句之前输出为undefined，但这并不代表num变量还没有被声明，此时num变量已经完成声明并分配了相应内存，只是该变量目前的值为undefined</li>
+</ul>
+</blockquote>
+<h3 id="有块级作用域"><a href="#有块级作用域" class="headerlink" title="有块级作用域"></a>有块级作用域</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    var num = 1</span><br><span class="line">    console.log(num)   // =&gt; 1</span><br><span class="line">&#125;</span><br><span class="line">console.log(num)    // =&gt; 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    let num = 1</span><br><span class="line">    console.log(num)    // =&gt; 1</span><br><span class="line">&#125;</span><br><span class="line">console.lot(num)    // =&gt; ReferenceError</span><br></pre></td></tr></table></figure>
+<p><strong>let声明的变量只能在当前块级作用域中使用</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(let i = 0, i &lt; 10; i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="禁止重复声明"><a href="#禁止重复声明" class="headerlink" title="禁止重复声明"></a>禁止重复声明</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var dev = true</span><br><span class="line">var dev = false</span><br><span class="line">console.log(dev)    // =&gt; false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let dev = true</span><br><span class="line">let dev = false     // =&gt; SyntaxError</span><br></pre></td></tr></table></figure>
+<p>var声明的变量可以重复声明，覆盖原来的值，不会有警告或提示，有隐患。<br>let声明的变量不可以重复声明，否则会直接抛出一个语法错误。</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><h3 id="同上三点"><a href="#同上三点" class="headerlink" title="同上三点"></a>同上三点</h3><blockquote>
+<ul>
+<li>无变量提升 </li>
+<li>有块级作用域</li>
+<li>禁止重复声明</li>
+</ul>
+</blockquote>
+<h3 id="禁止重复赋值"><a href="#禁止重复赋值" class="headerlink" title="禁止重复赋值"></a>禁止重复赋值</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const DEV = true</span><br><span class="line">DEV = false     // =&gt; TypeError</span><br></pre></td></tr></table></figure>
+<p>根据静态常量的定义可以知道，const声明的常量一经声明便不能再改其值。</p>
+<h3 id="必须赋初始值"><a href="#必须赋初始值" class="headerlink" title="必须赋初始值"></a>必须赋初始值</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const DEV   // =&gt; SyntaxError</span><br></pre></td></tr></table></figure>
+<p>const声明的常量既然一经声明，不能再改其值，那声明的时候不赋初始值显然不合理。一个没有值得常量只会浪费内存，没有意义。</p>
+<h1 id="箭头操作符"><a href="#箭头操作符" class="headerlink" title="箭头操作符"></a>箭头操作符</h1><p>&#x3D;&gt;与lambda表达式有异曲同工之妙，它简化了函数的书写，操作符左边为输入的参数，右边是进行的操作和返回的值 inputs &#x3D;&gt; outputs<br>js中经常用到回调，而一般回调又以匿名函数的形式出现，每次都需要写一个function，很繁琐。引入箭头函数后可以很方便的写回调了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4,5]</span><br><span class="line">//  before</span><br><span class="line">arr.forEach(function(v)&#123;</span><br><span class="line">    console.log(v);</span><br><span class="line">&#125;)</span><br><span class="line">//  ES6</span><br><span class="line">arr.forEach(v =&gt; console.log(v))</span><br></pre></td></tr></table></figure>
+<p>多个入参时需用括号包裹入参，单个入参时可省略括号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,4,5,6]</span><br><span class="line">arr.map((v, k, thisArr) =&gt; &#123;</span><br><span class="line">    return thisArr.reverse()[k] * v;</span><br><span class="line">&#125;)  //  [6,10,12,12,10,6]</span><br></pre></td></tr></table></figure>
+<p>函数上下文中的this</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//  before</span><br><span class="line">var obj = &#123;</span><br><span class="line">    arr: [1,2,3,4,5],</span><br><span class="line">    getMaxPow2: function() &#123;</span><br><span class="line">        var that = this,</span><br><span class="line">        getMax = function() &#123;</span><br><span class="line">            return Math.max.apply(&#123;&#125;, that.arr);</span><br><span class="line">        &#125;;</span><br><span class="line">        return Math.pow(getMax(), 2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//  ES6</span><br><span class="line">var obj = &#123;</span><br><span class="line">    arr: [1,2,3,4,5],</span><br><span class="line">    getMaxPow2: function() &#123;</span><br><span class="line">        var getMax = () =&gt; &#123;</span><br><span class="line">            return Math.max.apply(&#123;&#125;, this.arr);</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.pow(getMax(), 2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>var that &#x3D; this,声明一个临时变量that。在对象或原型链中，我们以前经常会写这样一个临时变量，that或_this，诸如此类，以达到在一个函数内部访问到父级或者祖先级this对象的目的。<br>在箭头函数中，函数体内没有自己的this，默认在其内部调用this时，自动查找其父级上下文的this对象（如果父级也是箭头函数，则会按照作用域链继续向上查找），就不再需要多余的声明一个临时变量了。</p>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>在一些情况下可能需要函数有自己的this，例如DOM事件绑定时事件回调函数中，需要用this来操作当前的DOM，此时就需要使用传统匿名函数而非箭头函数。</li>
+<li>在严格模式下，如果箭头函数的上层函数均为箭头函数，那么this对象将不可用。</li>
+<li>由于箭头函数没有自己的this对象，所以箭头函数不能当做构造函数。</li>
+</ul>
+</blockquote>
+<p>父级函数 arguments<br>在函数体中有arguments这样一个伪数组对象，该对象中包含该函数所有的入参（显式入参 + 隐式入参）。当函数体中有另一个函数，且该函数为箭头函数时，该箭头函数的函数体中可以直接访问父级函数的arguments对象。</p>
+<blockquote>
+<ul>
+<li>由于箭头函数本身没有arguments对象，所以如果它的上层函数都是箭头函数的话，那么arguments对象将不可用。</li>
+</ul>
+</blockquote>
+<p><strong>小结</strong></p>
+<blockquote>
+<ul>
+<li>共享父级this对象，arguments参数</li>
+<li>不能当做构造函数</li>
+<li>当箭头函数入参只有一个时可以省略入参括号</li>
+<li>当入参多于一个或没有入参时必须有括号</li>
+<li>当函数体只有一个return语句时，可以省略函数体的花括号与return关键字</li>
+</ul>
+</blockquote>
+<h1 id="类-amp-继承"><a href="#类-amp-继承" class="headerlink" title="类 &amp; 继承"></a>类 &amp; 继承</h1><p>js时面向对象的，es6提供的类实际上只是js原型模式的包装，对象的创建、继承更加直观了，父类方法的调用，实例化，静态方法和构造函数等概念更加形象化。<br><strong>类的定义</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/* 类不会被提升 */</span><br><span class="line">let puppy = new Animal(&#x27;puppy&#x27;);    //  ReferenceError</span><br><span class="line">class Animal &#123;</span><br><span class="line">    constructor(name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sleep() &#123;</span><br><span class="line">        console.log(`the $&#123;this.name&#125; is sleeping...`);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static type() &#123;</span><br><span class="line">        console.log(`this is an Animal class.`);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let puppy = new Animal(&#x27;puppy&#x27;);</span><br><span class="line">puppy.sleep();  // the puppy is sleeping...</span><br><span class="line"></span><br><span class="line">/*实例化后无法访问静态方法*/</span><br><span class="line">puppy.type();   //  TypeError</span><br><span class="line">Animal.type();  //  this is an Animal class.</span><br><span class="line"></span><br><span class="line">/*实例化前无法访问动态方法*/</span><br><span class="line">Animal.sleep(); //  TypeError</span><br><span class="line"></span><br><span class="line">/*类不能重复定义*/</span><br><span class="line">class Animal() &#123;&#125;   //  SyntaxError</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>类的定义中没有要求类名的大小写，鉴于代码规范，推荐类名首字母大写</li>
+<li>类定义中有一特殊方法constructor()，该方法名固定，表示该类的构造函数（方法），在类的实例化过程中会被调用，new Animal(‘puppy’)</li>
+<li>类中无法像对象一样使用prop: value或者prop &#x3D; value 的形式定义一个类的属性，只能在类的构造方法或其他方法中使用this.prop &#x3D; value的形式为类添加属性。</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//  before</span><br><span class="line">function Animal(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype = &#123;</span><br><span class="line">    sleep: function() &#123;</span><br><span class="line">        console.log(&#x27;the&#x27; + this.name + &#x27;is sleeping...&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Animal.type = function()  &#123;</span><br><span class="line">    console.log(&#x27;this is an Animal class.&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>类的继承</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Programmer extends Animal &#123;</span><br><span class="line">    constructor (name) &#123;</span><br><span class="line">        /*在super方法之前this不可用*/</span><br><span class="line">        console.log(this);  // ReferenceError</span><br><span class="line">        super(name);</span><br><span class="line">        console.log(this)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    program() &#123;</span><br><span class="line">        console.log(&quot;I&#x27;m coding...&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sleep() &#123;</span><br><span class="line">        console.log(&#x27;save all files.&#x27;);</span><br><span class="line">        console.log(&#x27;get into bed&#x27;);</span><br><span class="line">        super.sleep();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let coder = new Programmer(&#x27;coder&#x27;);</span><br><span class="line">coder.program();    //  I&#x27;m coding...</span><br><span class="line">coder.sleep();  //  save all files. get into bed. the coder is sleeping.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>使用class定义类Programmer，使用extends关键字继承类Animal</li>
+<li>若子类有构造方法，那么子类构造方法中使用this对象之前必须使用super()方法运行父类的构造方法以对父类进行初始化。</li>
+<li>在子类方法中可以使用super对象来调用父类上的方法。</li>
+</ul>
+</blockquote>
+<p><strong>小结</strong></p>
+<blockquote>
+<ul>
+<li>本质为对原型链的二次包装</li>
+<li>类没有提升</li>
+<li>不能使用字面量定义属性</li>
+<li>动态继承类的构造方法中super优先于this</li>
+</ul>
+</blockquote>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>将不同功能的代码分别写在不同文件中，各模块只需导出公共接口部分，然后通过模块的导入方式在其他地方使用。es6正式推出模块化规范</p>
+<h2 id="内联导出"><a href="#内联导出" class="headerlink" title="内联导出"></a>内联导出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export const DEV = true;</span><br><span class="line">export function example() &#123;</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br><span class="line">export class expClass &#123;</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br><span class="line">export let obj = &#123;</span><br><span class="line">    DEV,</span><br><span class="line">    example,</span><br><span class="line">    expClass,</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用export关键字，后面紧跟声明关键字（let、function等）声明一个导出对象，这种声明并同时导出的方式称为内联导出。<br>未被导出的内容（变量、函数、类等）由于独立代码块的原因，将仅供模块内部使用（类似闭包)。</p>
+<h2 id="对象导出"><a href="#对象导出" class="headerlink" title="对象导出"></a>对象导出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//  module example.js</span><br><span class="line">const DEV = true;</span><br><span class="line">function example() &#123;</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br><span class="line">class expClass &#123;</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br><span class="line">let obj = &#123;</span><br><span class="line">    DEV,</span><br><span class="line">    example,</span><br><span class="line">    expClass,</span><br><span class="line">    //...</span><br><span class="line">&#125;</span><br><span class="line">//  module example.js</span><br><span class="line">export &#123;DEV,example,expClass,obj&#125;</span><br><span class="line">export &#123;DEV,example as exp,expClass,obj&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以像写普通js文件一样写主要的功能逻辑，最好通过export集中导出。<br>导出时使用as关键字改变导出对象的名称。</p>
+<h2 id="默认导出"><a href="#默认导出" class="headerlink" title="默认导出"></a>默认导出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;DEV,example as exp,expClass,obj&#125;;</span><br><span class="line">export default obj;</span><br><span class="line">export default const DEV = true;</span><br></pre></td></tr></table></figure>
+<p>在export关键字后接default来设置模块的默认导出对象，一个模块只能有一个默认导出。</p>
+<h2 id="模块导入"><a href="#模块导入" class="headerlink" title="模块导入"></a>模块导入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import example from &#x27;./example.js&#x27;;</span><br><span class="line">import default as example from &#x27;./example.js&#x27;</span><br><span class="line">import * as exp from &#x27;./example.js&#x27;</span><br><span class="line">//  使用通配符*配合as关键字一次性导出模块中所有内容，最终导入的内容放在exp对象中</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<ul>
+<li>封闭的代码块，每个模块都有自己完全独立的代码块，跟作用域类似，但更加封闭。</li>
+<li>无限制导出，一个模块理论上可以导出无数个变量、函数、对象属性、对象方法、类。但是要合理控制代码颗粒度。</li>
+<li>严格模式下运行，模块默认在（’use strick’）下运行</li>
+</ul>
+</blockquote>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF"><span class="toc-text">字符串模板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#let%E5%92%8Cconst%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">let和const关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#let"><span class="toc-text">let</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="toc-text">无变量提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">有块级作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%87%8D%E5%A4%8D%E5%A3%B0%E6%98%8E"><span class="toc-text">禁止重复声明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const"><span class="toc-text">const</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E4%B8%8A%E4%B8%89%E7%82%B9"><span class="toc-text">同上三点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%81%E6%AD%A2%E9%87%8D%E5%A4%8D%E8%B5%8B%E5%80%BC"><span class="toc-text">禁止重复赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%85%E9%A1%BB%E8%B5%8B%E5%88%9D%E5%A7%8B%E5%80%BC"><span class="toc-text">必须赋初始值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">箭头操作符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB-amp-%E7%BB%A7%E6%89%BF"><span class="toc-text">类 &amp; 继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E8%81%94%E5%AF%BC%E5%87%BA"><span class="toc-text">内联导出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%AF%BC%E5%87%BA"><span class="toc-text">对象导出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%AF%BC%E5%87%BA"><span class="toc-text">默认导出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5"><span class="toc-text">模块导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://example.com/2018/04/15/ES6新特性/">http://example.com/2018/04/15/ES6新特性/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2020/05/21/map%E7%94%A8%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          map用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/07/%E5%89%8D%E7%AB%AF%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">前端小结</div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/12/01/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">防抖和节流</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/19/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/18/http%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86/">http协议整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/01/vue%E6%95%B4%E7%90%86/">vue整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">前端面试题整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ES6/" style="font-size: 13.33px;">ES6</a> <a href="/tags/ElementUI/" style="font-size: 10px;">ElementUI</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 13.33px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Element-UI/">Element UI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javaScript/">javaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年12月</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017年12月</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ElementUI/" rel="tag">ElementUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/" rel="tag">javaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/atom.xml">订阅本站</a>
+        <span> | </span><a href="/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2022 saltlike.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>前端面试题整理 | saltlike</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="saltlike, 博客">
+  
+  
+    <meta name="keywords" content="saltlike, 博客">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="saltlike" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">saltlike</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> 首页</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> 归档</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> 关于</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-前端面试题整理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      前端面试题整理
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2020-08-22T03:06:46.000Z" itemprop="datePublished">2020年08月22日</time>
+</span>
+      
+  <div class="article-category">
+    <i class="fa fa-classify"></i>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> > <a class="article-category-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
+  </div>
+
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2020/08/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  留言
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1、防抖和节流"><a href="#1、防抖和节流" class="headerlink" title="1、防抖和节流"></a>1、防抖和节流</h1><h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><p><strong>防止抖动，单位时间内事件触发会被重置，以免把一次事件误认为多次，代码实现重在清零<code>clearTimeout(timer)</code></strong><br><strong>防抖场景</strong></p>
+<ol>
+<li>登录、发短信等按钮为避免用户点击太快，以至发送多次请求</li>
+<li>调整浏览器窗口大小，resize次数过于频繁，此时需要一次到位</li>
+</ol>
+<h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><p><strong>控制流量，单位时间内事件只能触发一次，控制事件发生的频率，代码实现重在加锁关锁<code>timer=timeout;timer=null</code></strong><br><strong>节流场景</strong></p>
+<ol>
+<li>scroll事件，每隔一秒计算一次位置信息</li>
+<li>浏览器播放事件，每隔一秒计算一次进度信息</li>
+<li>input框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求（也可做防抖）</li>
+</ol>
+<h1 id="2、全部替换一个子串为另一个子串"><a href="#2、全部替换一个子串为另一个子串" class="headerlink" title="2、全部替换一个子串为另一个子串"></a>2、全部替换一个子串为另一个子串</h1><ol>
+<li>js巧妙替换法：<code>str.split(&#39;foo&#39;).join(&#39;bar&#39;)</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &#x27;hello. hello. hello. &#x27;.split(&#x27;hello. &#x27;).join(&#x27;A&#x27;)</span><br><span class="line">&lt; &quot;AAA&quot;</span><br></pre></td></tr></table></figure></li>
+<li>正则表达式替换（如果有特殊字符，就会出问题）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 期待结果: &#x27;AhelloX hello3 &#x27;</span><br><span class="line">&gt; &#x27;hello. helloX hello3 &#x27;.replace(new RegExp(&#x27;hello. &#x27;, &#x27;g&#x27;), &#x27;A&#x27;)</span><br><span class="line">&lt; &quot;AAA&quot;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="3、css盒模型"><a href="#3、css盒模型" class="headerlink" title="3、css盒模型"></a>3、css盒模型</h1><p>盒模型的组成，由里向外：content、padding、border、margin<br><strong>IE盒模型中，width表示content+padding+border这三部分的宽度</strong><br><strong>标准盒模型中，width表示content部分的宽度</strong><br>css3中box-sizing的使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: content-box（默认属性）  W3C标准盒模型</span><br><span class="line">box-sizing: border-box   IE盒模型</span><br></pre></td></tr></table></figure>
+
+<h1 id="4、1rem、1em、1vh、1px代表的含义"><a href="#4、1rem、1em、1vh、1px代表的含义" class="headerlink" title="4、1rem、1em、1vh、1px代表的含义"></a>4、1rem、1em、1vh、1px代表的含义</h1><h2 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h2><blockquote>
+<p>rem是全部的长度都相对于根元素<code>&lt;html&gt;</code>元素，通常做法是给html元素设置一个字体大小，然后其他元素的长度单位就是rem</p>
+</blockquote>
+<h2 id="em"><a href="#em" class="headerlink" title="em"></a>em</h2><blockquote>
+<ul>
+<li>子元素字体大小的em是相对于父元素字体大小</li>
+<li>元素的width、height、padding、margin用em就是相对于该元素的font-size而言</li>
+</ul>
+</blockquote>
+<h2 id="vw-x2F-vh"><a href="#vw-x2F-vh" class="headerlink" title="vw&#x2F;vh"></a>vw&#x2F;vh</h2><blockquote>
+<p>全称是viewport width和viewport height，视窗的宽度和高度；相当于屏幕宽度和高度的1%，另外，处理宽度用%单位更合适，处理高度用vh单位更好</p>
+</blockquote>
+<h2 id="px"><a href="#px" class="headerlink" title="px"></a>px</h2><blockquote>
+<p>像素（pixel），相对长度单位。像素px是相对于显示器屏幕分辨率而言的<br>例如：电脑分辨率为1920*1024，前者表示屏幕宽度总共有1920个像素，后者表示高度为1024个像素</p>
+</blockquote>
+<h1 id="5、-lt-label-gt-标签的作用"><a href="#5、-lt-label-gt-标签的作用" class="headerlink" title="5、&lt;label&gt;标签的作用"></a>5、<code>&lt;label&gt;</code>标签的作用</h1><p>方便鼠标点击使用，扩大可点击的范围，增强用户体验</p>
+<h1 id="6、遍历A节点的父节点下的所有子节点"><a href="#6、遍历A节点的父节点下的所有子节点" class="headerlink" title="6、遍历A节点的父节点下的所有子节点"></a>6、遍历A节点的父节点下的所有子节点</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var b = document.getElementById(&#x27;a&#x27;).parentNode.children</span><br><span class="line">  console.log(b)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="7、用js递归方式写1到5的求和"><a href="#7、用js递归方式写1到5的求和" class="headerlink" title="7、用js递归方式写1到5的求和"></a>7、用js递归方式写1到5的求和</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function add (n1,n2) &#123;</span><br><span class="line">        let total = n1 + n2</span><br><span class="line">        if(n2 + 1 &gt; 5) &#123;</span><br><span class="line">            return total</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            return add(total,n2 + 1)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    document.write(add(1,2))</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="8、从在浏览器中输入网址，到html渲染的过程"><a href="#8、从在浏览器中输入网址，到html渲染的过程" class="headerlink" title="8、从在浏览器中输入网址，到html渲染的过程"></a>8、从在浏览器中输入网址，到html渲染的过程</h1><ol>
+<li>在地址栏输入地址后，会经过DNS域名解析查询到要请求的服务器的地址。然后经过TCP连接到服务器。服务器返回浏览器请求的内容，html源码</li>
+<li>浏览器解析html源码，创建DOM树；并行请求css&#x2F;image&#x2F;js的内容；每一个html标签、文本对应一个节点，dom树的根结点对应的是html标签</li>
+<li>浏览器解析css代码，构建渲染树。css代码中的非法语法会被直接忽略</li>
+<li>dom树跟html标签一一对应，渲染树会忽略不需要渲染的元素，比如：head、display：none的元素</li>
+<li>渲染树创建好后，浏览器就把页面绘制到屏幕上<br>以上过程不是一次性顺序完成的，css和javascript往往会多次修改dom和css，所以以上过程会被重复执行</li>
+</ol>
+<h1 id="9、中断ajax请求"><a href="#9、中断ajax请求" class="headerlink" title="9、中断ajax请求"></a>9、中断ajax请求</h1><blockquote>
+<ul>
+<li>设置超时时间让ajax自动断开</li>
+<li>手动中止ajax请求，ajax.abort()</li>
+</ul>
+</blockquote>
+<h1 id="10、事件代理"><a href="#10、事件代理" class="headerlink" title="10、事件代理"></a>10、事件代理</h1><p>事件委托是指将事件绑定到目标元素的父元素上，利用冒泡机制触发该事件</p>
+<h1 id="11、js继承方式"><a href="#11、js继承方式" class="headerlink" title="11、js继承方式"></a>11、js继承方式</h1><p>构造函数继承、原型继承、组合继承</p>
+<h1 id="12、数组去重"><a href="#12、数组去重" class="headerlink" title="12、数组去重"></a>12、数组去重</h1><blockquote>
+<ul>
+<li>数组遍历去重</li>
+<li>es6方法：<code>arr = [...new Set(arr)] ;</code></li>
+<li>Array.from()能把set结构转换为数组：<code>arr = Array.from(new Set(array));</code></li>
+</ul>
+</blockquote>
+<h1 id="13、get、post的区别"><a href="#13、get、post的区别" class="headerlink" title="13、get、post的区别"></a>13、get、post的区别</h1><blockquote>
+<ol>
+<li>get传参是通过地址栏url传递，可以直接看到get传递的参数，请求数据在url后通过？连接，&amp;进行参数分割；post传参在url中不可见，传递参数在http的请求体内；</li>
+<li>get传递的数据大小受url大小的限制，url最大长度是2048个字符；post传参没有长度限制</li>
+<li>get后退不会有影响，post后退会重新进行提交</li>
+<li>get请求可以被缓存，post请求不可以被缓存</li>
+<li>get请求只支持url编码，post支持多种编码方式</li>
+<li>get只支持ASCII字符，post没有字符类型限制</li>
+<li>get请求的记录会留在历史记录中，post请求不会留在历史记录中</li>
+</ol>
+</blockquote>
+<h1 id="14、http响应码及含义"><a href="#14、http响应码及含义" class="headerlink" title="14、http响应码及含义"></a>14、http响应码及含义</h1><blockquote>
+<ul>
+<li>1** 临时响应<br>100：请求者应继续提出请求<br>101: 切换协议，请求者已要求服务器切换协议，服务器已确认并准备进行切换</li>
+<li>2** 成功<br>200: 正确的请求返回正确的结果<br>201: 表示资源被正确的创建；例如：我们post用户名、密码正确创建一个用户就可以返回201<br>202:请求是正确的，但结果正在处理中，这时客户端可以通过轮询等机制继续请求</li>
+<li>3** 已重定向<br>300: 请求成功，但结果有多种选择<br>301: 请求成功，但资源被永久转移<br>303: 使用get访问新的地址来获取资源<br>304: 请求的资源没有被修改过</li>
+<li>4** 请求错误<br>400: 请求出现错误，例如：请求头不对等<br>401: 没有提供认证信息，请求的时候没有带上token等<br>402: 为以后需要所保留的状态码<br>403: 请求的资源不允许访问，也就是没有权限<br>404: 请求的内容不存在</li>
+<li>5** 服务器错误<br>500: 服务器错误<br>501: 请求还没有被实现</li>
+</ul>
+</blockquote>
+<h1 id="15、JavaScript数据类型"><a href="#15、JavaScript数据类型" class="headerlink" title="15、JavaScript数据类型"></a>15、JavaScript数据类型</h1><ul>
+<li>基本数据类型：number、String、Boolean、undefined、null、symbol（es6新增的数据类型）</li>
+<li>引用数据类型：array、function、object（统称为object）</li>
+</ul>
+<h1 id="16、数据类型检测"><a href="#16、数据类型检测" class="headerlink" title="16、数据类型检测"></a>16、数据类型检测</h1><blockquote>
+<ul>
+<li>对于基本数据类型，除了null，typeof都可以显示正确的类型</li>
+<li>对于对象，array、object会返回object，function返回function<br><code>typeof null //object</code><br><code>typeof NaN //number</code><br><code>typeof console.log //function</code></li>
+<li>Object.prototype.toString.call()可以检测所有数据类型</li>
+<li>instanceOf通过原型链判断数据类型</li>
+</ul>
+</blockquote>
+<h1 id="17、深浅拷贝"><a href="#17、深浅拷贝" class="headerlink" title="17、深浅拷贝"></a>17、深浅拷贝</h1><ol>
+<li>浅拷贝<br><code>Object.assign()</code> 会合并对象生成一个新对象；如果对象的属性是普通类型，改变后新对象不会改变；如果是引用类型，改变后新对象会改变；</li>
+<li>深拷贝<br><code>JSON.parse(JSON.stringfy(obj))</code>利用JSON.stringfy(obj)先将对象转为json字符串，再用JSON.parse()转回json对象可以实现深拷贝<br>js实现深拷贝<br>分两步：浅拷贝 + 递归，浅拷贝时判断属性值是否是对象，如果是对象进行递归操作<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function cloneDeep(source) &#123;</span><br><span class="line">      if (!isObject(source)) return source; // 非对象返回自身</span><br><span class="line">      var target = Array.isArray(source) ? [] : &#123;&#125;;</span><br><span class="line">      for (var key in source) &#123;</span><br><span class="line">        if (source.hasOwnProperty(i)) &#123;</span><br><span class="line">          if (isObject(source[key])) &#123;</span><br><span class="line">            target[key] = cloneDeep(source[key]); // 注意这里</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            target[key] = source[key];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return target;</span><br><span class="line">    &#125;</span><br><span class="line">    function isObject(obj) &#123;</span><br><span class="line">      return typeof obj === &#x27;object&#x27; &amp;&amp; obj != null;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="18、new操作符具体做了什么"><a href="#18、new操作符具体做了什么" class="headerlink" title="18、new操作符具体做了什么"></a>18、new操作符具体做了什么</h1><blockquote>
+<ul>
+<li>首先创建实例对象{}</li>
+<li>this变量引用该对象，同时继承构造函数的原型</li>
+<li>属性和方法被加入到this引用的对象中</li>
+<li>新创建的对象由this所引用，最后隐式的返回this</li>
+</ul>
+</blockquote>
+<h1 id="19、在浏览器中输入一个网址后，发生了什么"><a href="#19、在浏览器中输入一个网址后，发生了什么" class="headerlink" title="19、在浏览器中输入一个网址后，发生了什么"></a>19、在浏览器中输入一个网址后，发生了什么</h1><ol>
+<li>浏览器通过DNS查找该域名的IP地址</li>
+<li>浏览器根据解析得到的IP地址向web服务器发送一个http请求</li>
+<li>服务器收到请求并进行处理</li>
+<li>服务器返回一个响应</li>
+<li>浏览器对该响应进行解码，解析html为dom，css为css-tree，dom + css生成render-tree绘图</li>
+<li>页面显示完成后，浏览器发送异步请求</li>
+<li>整个过程结束后，浏览器关闭tcp连接</li>
+</ol>
+<h1 id="20-promise"><a href="#20-promise" class="headerlink" title="20. promise"></a>20. promise</h1><p>promise是异步编程的解决方案，比传统的callback更优雅，es6将其写进语音标准，原生提供了promise对象</p>
+<h1 id="21-浏览器兼容问题"><a href="#21-浏览器兼容问题" class="headerlink" title="21. 浏览器兼容问题"></a>21. 浏览器兼容问题</h1><p>由于浏览器内核的差异，以及html、css的发展，会出现兼容性问题</p>
+<ol>
+<li>不同浏览器的默认样式存在差异，可以统一设置css初始化样式抹平差异，最简单的情况：不同浏览器的标签默认margin、padding差异较大，通过设置<code>*&#123;margin:0;padding:0&#125;</code>解决</li>
+<li>Firefox、Chrome不兼容cursor：hand；<br>解决：cousor：pointer兼容所有浏览器</li>
+<li>IE6中元素浮动后margin值变双倍<br>解决：将元素转为行内属性；<code>display: inline</code></li>
+<li>css的hack问题，主要针对IE的不同版本，不同的浏览器写法不同，条件注释hack<br>IE6认识的hacker是下划线_和星号* <code>#id&#123;_display:block;&#125;</code><br>IE7遨游认识的hacker是星号*  <code>#id&#123;*display:block&#125;</code><br>ID8的css Hack写法是在css属性后分号前加空格、斜线、和9  <code>#id&#123;display:block /9&#125;</code><br>火狐的hack写法@-moz-document url-prefix（）{ #id{ display: block; } } </li>
+<li>盒模型的不同：IE盒模型和标准盒模型</li>
+<li>javascript的兼容性，最好是应用jquery库，该库对兼容性都做了处理<blockquote>
+<ul>
+<li>标准的事件绑定方法是addEventListener，但IE下是attachEvent</li>
+<li>事件捕获方式不同，标准浏览器是由外至内，IE是由内到外（事件冒泡）。但最后是将IE的定为标准</li>
+<li>获取目标元素的方法不同，标准浏览器是event.target,IE下是event.srcElement</li>
+<li>ajax的实现方式不同，标准浏览器是XMLHttpRequest,IE下是activeXObject</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p><strong>要减少浏览器兼容性问题，通常采用一些现成的UI技术ext、flex或其他的UI框架，这些技术已经有相当好的浏览器兼容性了；另外采用js框架做辅助，如jQuery等对dom、事件、ajax的兼容，和页面上的hack技术</strong></p>
+<h1 id="22-http与https的区别"><a href="#22-http与https的区别" class="headerlink" title="22. http与https的区别"></a>22. http与https的区别</h1><ol>
+<li>传输信息安全性不同</li>
+</ol>
+<blockquote>
+<ul>
+<li>http协议：超文本传输协议，信息是明文传输。如果攻击者截取了web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息；是专门用来传输注入html的超媒体文档等web内容的协议，它是基于传输层tcp协议的应用层协议；</li>
+<li>https协议：是基于安全套接字的http协议，是具有安全性的ssl加密传输协议，为浏览器和服务器之间的通信加密，确保数据传输的安全；</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li>连接方式不同</li>
+</ol>
+<blockquote>
+<ul>
+<li>http协议：http的连接很简单，是无状态的；</li>
+<li>https协议：是由ssl+http协议构建的可进行加密传输、身份认证的网络协议；</li>
+</ul>
+</blockquote>
+<ol start="3">
+<li>端口不同</li>
+</ol>
+<blockquote>
+<ul>
+<li>http协议：使用的端口是80；</li>
+<li>https协议：使用的端口是443；</li>
+</ul>
+</blockquote>
+<ol start="4">
+<li>证书申请方式不同</li>
+</ol>
+<blockquote>
+<ul>
+<li>http协议：免费申请</li>
+<li>https协议：需要到ca申请证书，一般免费证书很少，要交费</li>
+</ul>
+</blockquote>
+<p>https优点：</p>
+<ol>
+<li>使用https协议可认证用户和服务器，确保数据发送到正确的客户机和服务器</li>
+<li>https协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性</li>
+<li>https是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本</li>
+</ol>
+<p>https缺点：</p>
+<ol>
+<li>握手阶段比较耗时，使页面加载时间延长，增加耗电</li>
+<li>SSL证书需要钱，功能越强大证书费用越高，个人网址、小网站没有必要一般不会用</li>
+<li>加密范围有限，在黑客攻击、拒绝服务攻击、服务器劫持方面几乎不起作用。而且SSL证书的信用链体系并不安全</li>
+<li>https连接缓存不如http高效，会增加数据开销和功耗</li>
+<li>SSL证书通常要绑定IP，不能在同一ip上绑定多个域名，IPV4资源不能支撑这个消耗<br>如何将网站从http切换到https？</li>
+<li>将页面中的所有链接，如js、css、图片等链接由http改为https</li>
+<li>建议保留http，以便在切换时做http和https的兼容；具体方式是，去掉链接中的http头部，以便自动匹配http头和https头；例如：将<a target="_blank" rel="noopener" href="http://www.baidu.com改为//www.baidu.com,%E7%84%B6%E5%90%8E%E5%BD%93%E7%94%A8%E6%88%B7%E4%BB%8Ehttp%E7%9A%84%E5%85%A5%E5%8F%A3%E8%BF%9B%E5%85%A5%E6%97%B6%EF%BC%8C%E9%A1%B5%E9%9D%A2%E5%B0%B1%E6%98%AFhttp%EF%BC%8C%E4%BB%8Ehttps%E8%BF%9B%E5%85%A5%E9%A1%B5%E9%9D%A2%EF%BC%8C%E9%A1%B5%E9%9D%A2%E5%8D%B3%E6%98%AFhttps">http://www.baidu.com改为//www.baidu.com,然后当用户从http的入口进入时，页面就是http，从https进入页面，页面即是https</a></li>
+</ol>
+<h1 id="23-CDN加速原理"><a href="#23-CDN加速原理" class="headerlink" title="23. CDN加速原理"></a>23. CDN加速原理</h1><p>CND,内容分发网络，将静态资源缓存到离用户很近的一个CDN节点上，就不用去访问距离远的服务器，这样不仅能提高用户的访问速度，也能减少服务器的带宽消耗，降低负载；<br>当请求到达CDN节点后，节点判断自己的内容缓存是否有效，如果有效，就立即发送响应内容给用户，从而加快响应速度。如果CDN节点的缓存失败，它会根据配置去源服务器获取最新的资源，然后发送给用户，并且会将内容缓存下来给后续访问的用户；这就意味着一个地区的用户只需要访问一次服务器，后续的用户都能因此受益；</p>
+<blockquote>
+<ul>
+<li>服务商提供智能域名解析服务，当浏览器发起域名查询时，这种智能DNS服务会根据用户IP寻找离它最近的CDN节点</li>
+<li>CDN多用于图片、js文件、css文件、静态页面等静态资源，不适用于动态页面</li>
+</ul>
+</blockquote>
+<h1 id="24-JavaScript同步异步"><a href="#24-JavaScript同步异步" class="headerlink" title="24. JavaScript同步异步"></a>24. JavaScript同步异步</h1><p>JavaScript的单线程是指在JS引擎中负责解释和执行Javascript代码的线程只有一个，即是：同一时间只能做一件事；这是因为JavaScript的主要用途是与用户互动，以及操作DOM，这决了它只能是单线程，否则会带来复杂的同步问题；例如：如果JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准</p>
+<ul>
+<li>JavaScript中如果不存在异步，只能自上而下的执行，万一上一行解析时间很长，那么下面的代码就会被阻塞，对用户而言，阻塞就意味着“卡死”，这样就导致很差的用户体验；<br>同步可以保证顺序一致，但容易导致阻塞；异步可以解决阻塞问题，但会改变顺序性；</li>
+<li>为了利用多核cpu的计算能力，html5提出web worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作dom，所以，这个标准并没有改变JavaScript单线程的本质</li>
+<li>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。于是，任务队列就产生了；</li>
+<li>由于IO设备（输入输出设备）很慢，这时候cpu就处于空闲状态，不得不等着结果出来，再往下执行；但是，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再把挂起的任务执行下去；</li>
+<li>所有任务分两种，同步任务和异步任务；同步任务指，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指，不进入主线程，而进入任务队列的任务，只有任务队列通知主线程，某个异步任务可以执行了，并且主线程空闲，该任务才会进入主线程执行</li>
+</ul>
+<p><strong>异步执行的运行机制如下</strong></p>
+<blockquote>
+<ol>
+<li>所有同步任务都在主线程上执行，形成一个执行栈</li>
+<li>主线程之外，还有一个任务队列，只要异步任务有了运行结果，就在任务队列之中放置一个事件</li>
+<li>一旦主线程执行栈中的所有同步任务执行完毕，系统就会读取任务队列，那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行</li>
+<li>主线程不断重复上面三步</li>
+</ol>
+</blockquote>
+<ul>
+<li>任务队列是一个先进先出的数据结构，排在前面的事件，优先被主线程读取。有时存在定时器功能，主线程首先要检查一下执行时间，某些事件只有到了规定的时间，才能返回主线程；</li>
+<li>任务队列中的事件，需要指定回调函数。回调函数就是那些会被主线程挂起来的代码；异步任务必须指定回调函数，当主线程开始执行异步任务，就是执行对应的回调函数</li>
+</ul>
+<h1 id="25-MVC和MVVM"><a href="#25-MVC和MVVM" class="headerlink" title="25. MVC和MVVM"></a>25. MVC和MVVM</h1><ol>
+<li><p>MVC就是model-view-controller，它是在不改变视图的情况下，对用户的输入进行响应；用户对view的操作交给controller处理，在controller中响应view的事件，并调用model的接口对数据进行操作，一旦model发生变化便通知相关视图进行更新</p>
+<blockquote>
+<p>缺点是：</p>
+<ol>
+<li>所有业务逻辑都在controller里操作，逻辑复杂不利于维护</li>
+<li>大量dom操作使页面渲染性能降低，加载速度变慢，影响用户体验</li>
+<li>当model频繁变化时，要主动更新view；当用户操作导致model变化，同样要将变化的数据同步到model，导致工作繁琐，且难以维护复杂多变的数据状态；</li>
+</ol>
+</blockquote>
+</li>
+<li><p>MVVM<br>MVVM实现了view和model的自动同步，当model的属性改变时，我们不用再手动操作dom，来改变view的显示，该属性对应的view会自动改变，ViewModel的核心是Vue中的双向数据绑定</p>
+</li>
+</ol>
+<blockquote>
+<ul>
+<li>通过数据绑定实现model转化成view</li>
+<li>通过DOM事件监听将view转化成model<br>ViewModel的存在在于抽离Controller中展示的业务逻辑，而不是替代controller，其他视图操作业务还是应该放在controller中实现；MVVM实现的是业务逻辑组件的重用，使开发更高效，结构更清晰，增加代码的复用性</li>
+</ul>
+</blockquote>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> 文章目录</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81"><span class="toc-text">1、防抖和节流</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E6%8A%96"><span class="toc-text">防抖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E6%B5%81"><span class="toc-text">节流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E5%85%A8%E9%83%A8%E6%9B%BF%E6%8D%A2%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2%E4%B8%BA%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2"><span class="toc-text">2、全部替换一个子串为另一个子串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81css%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-text">3、css盒模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%811rem%E3%80%811em%E3%80%811vh%E3%80%811px%E4%BB%A3%E8%A1%A8%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">4、1rem、1em、1vh、1px代表的含义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rem"><span class="toc-text">rem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#em"><span class="toc-text">em</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vw-x2F-vh"><span class="toc-text">vw&#x2F;vh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#px"><span class="toc-text">px</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81-lt-label-gt-%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">5、&lt;label&gt;标签的作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E9%81%8D%E5%8E%86A%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-text">6、遍历A节点的父节点下的所有子节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%E3%80%81%E7%94%A8js%E9%80%92%E5%BD%92%E6%96%B9%E5%BC%8F%E5%86%991%E5%88%B05%E7%9A%84%E6%B1%82%E5%92%8C"><span class="toc-text">7、用js递归方式写1到5的求和</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%E3%80%81%E4%BB%8E%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5%E7%BD%91%E5%9D%80%EF%BC%8C%E5%88%B0html%E6%B8%B2%E6%9F%93%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">8、从在浏览器中输入网址，到html渲染的过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%E3%80%81%E4%B8%AD%E6%96%ADajax%E8%AF%B7%E6%B1%82"><span class="toc-text">9、中断ajax请求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10%E3%80%81%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86"><span class="toc-text">10、事件代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11%E3%80%81js%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F"><span class="toc-text">11、js继承方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12%E3%80%81%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D"><span class="toc-text">12、数组去重</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13%E3%80%81get%E3%80%81post%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">13、get、post的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14%E3%80%81http%E5%93%8D%E5%BA%94%E7%A0%81%E5%8F%8A%E5%90%AB%E4%B9%89"><span class="toc-text">14、http响应码及含义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15%E3%80%81JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">15、JavaScript数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B"><span class="toc-text">16、数据类型检测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17%E3%80%81%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-text">17、深浅拷贝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#18%E3%80%81new%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%85%B7%E4%BD%93%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-text">18、new操作符具体做了什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#19%E3%80%81%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AA%E7%BD%91%E5%9D%80%E5%90%8E%EF%BC%8C%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-text">19、在浏览器中输入一个网址后，发生了什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#20-promise"><span class="toc-text">20. promise</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#21-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="toc-text">21. 浏览器兼容问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#22-http%E4%B8%8Ehttps%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">22. http与https的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#23-CDN%E5%8A%A0%E9%80%9F%E5%8E%9F%E7%90%86"><span class="toc-text">23. CDN加速原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#24-JavaScript%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5"><span class="toc-text">24. JavaScript同步异步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#25-MVC%E5%92%8CMVVM"><span class="toc-text">25. MVC和MVVM</span></a></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>原文链接: <a href="http://example.com/2020/08/22/前端面试题整理/">http://example.com/2020/08/22/前端面试题整理/</a></p>
+              <p>版权声明: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+          
+    <div class="social-share">
+      <span>分享到:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2020/09/01/vue%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          vue整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/27/bat%E8%84%9A%E6%9C%AC%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">bat脚本批量启动应用程序 </div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> 最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/12/01/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">防抖和节流</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/19/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/18/http%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86/">http协议整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/01/vue%E6%95%B4%E7%90%86/">vue整理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">前端面试题整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ES6/" style="font-size: 13.33px;">ES6</a> <a href="/tags/ElementUI/" style="font-size: 10px;">ElementUI</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/vue/" style="font-size: 16.67px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 13.33px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-classify"></i> 分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ES6/">ES6</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Element-UI/">Element UI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javaScript/">javaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年12月</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017年12月</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> 标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ElementUI/" rel="tag">ElementUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/" rel="tag">javaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> 友情链接</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example1.com/">site-name1</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example2.com/">site-name2</a>
+        </li>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://www.example3.com/">site-name3</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">网站地图</a>
+        <span> | </span><a href="/atom.xml">订阅本站</a>
+        <span> | </span><a href="/about/">联系博主</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2022 saltlike.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

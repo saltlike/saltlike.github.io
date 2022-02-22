@@ -143,7 +143,7 @@
         <h2 id="es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容"><a href="#es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容" class="headerlink" title="es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容"></a>es6的集合对象类型Map、Set和数组，有如下迭代器用于搜索它们的内容</h2><ol>
 <li>entries(): 返回一个包含键值对的迭代器；</li>
 <li>values(): 返回一个包含集合中的值得迭代器；</li>
-<li>keys(): 返回一个包含集合中的键的迭代器；</li>
+<li>keys(): 返回一个包含集合中的键的迭代器；<span id="more"></span></li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">let colors = [&#x27;red&#x27;,&#x27;green&#x27;,&#x27;blue&#x27;]</span><br><span class="line">    let testObj = [</span><br><span class="line">      &#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;,</span><br><span class="line">      &#123;&#x27;id&#x27;:&#x27;id2&#x27;,&#x27;name&#x27;:&#x27;name2&#x27;&#125;,</span><br><span class="line">      &#123;&#x27;id&#x27;:&#x27;id3&#x27;,&#x27;name&#x27;:&#x27;name3&#x27;&#125;,</span><br><span class="line">    ]</span><br><span class="line">    let testObj1 = &#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;</span><br><span class="line">    for(let entry of colors.entries()) &#123;</span><br><span class="line">      console.log(entry) // [0,&quot;red&quot;],[1,&quot;green&quot;],[2,&quot;blue&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">    for(let entry of testObj.entries()) &#123;</span><br><span class="line">      console.log(entry)  // [0,&#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;],[1,&#123;&#x27;id&#x27;:&#x27;id2&#x27;,&#x27;name&#x27;:&#x27;name2&#x27;&#125;],[2,&#123;&#x27;id&#x27;:&#x27;id3&#x27;,&#x27;name&#x27;:&#x27;name3&#x27;&#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    for(let values of testObj.values()) &#123;</span><br><span class="line">      console.log(values)  // &#123;&#x27;id&#x27;:&#x27;id1&#x27;,&#x27;name&#x27;:&#x27;name1&#x27;&#125;,&#123;&#x27;id&#x27;:&#x27;id2&#x27;,&#x27;name&#x27;:&#x27;name2&#x27;&#125;,&#123;&#x27;id&#x27;:&#x27;id3&#x27;,&#x27;name&#x27;:&#x27;name3&#x27;&#125;</span><br><span class="line">    &#125;  </span><br><span class="line">    for(let keys of testObj.keys()) &#123;</span><br><span class="line">      console.log(keys)  // 0,1,2</span><br><span class="line">    &#125;  </span><br><span class="line">    for(let keys of Object.keys(testObj1)) &#123;</span><br><span class="line">      console.log(keys)  // id,name</span><br><span class="line">    &#125;</span><br><span class="line">    for(let entries of Object.entries(testObj1)) &#123;</span><br><span class="line">      console.log(entries)  // [&quot;id&quot;, &quot;id1&quot;],[&quot;name&quot;, &quot;name1&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">    for(let values of Object.values(testObj1)) &#123;</span><br><span class="line">      console.log(values)  // id1,name1</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
@@ -162,7 +162,7 @@
         
         
           <blockquote id="copyright">
-              <p>原文链接: <a href="http://example.com/2020/06/02/es6迭代器/">http://example.com/2020/06/02/es6迭代器/</a></p>
+              <p>原文链接: <a href="https://saltlike.github.io/2020/06/02/es6迭代器/">https://saltlike.github.io/2020/06/02/es6迭代器/</a></p>
               <p>版权声明: 转载请注明出处.</p>
           </blockquote>
         
@@ -231,6 +231,10 @@
       <ul>
         
           <li>
+            <a href="/2022/02/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/01/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">防抖和节流</a>
           </li>
         
@@ -244,10 +248,6 @@
         
           <li>
             <a href="/2020/09/01/vue%E6%95%B4%E7%90%86/">vue整理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86/">前端面试题整理</a>
           </li>
         
       </ul>
@@ -279,7 +279,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><i class="fa fa-archive"></i> 归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年12月</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017年12月</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020年12月</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018年04月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017年12月</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
